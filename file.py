@@ -30,6 +30,10 @@ TRANSCRIPTION_PATH = "transcription.txt"
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'mp4'}
 
+# Ensure upload folder exists
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
 # Initialize ThreadPoolExecutor
 executor = ThreadPoolExecutor(max_workers=2)
 
